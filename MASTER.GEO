@@ -1,7 +1,8 @@
-;PROJECT	: Ruang Kelas E305 Gedung E ITERA
-;AUTHOR	  : RIFQI IKHWANUDDIN, S.T., M.T.
-;DATE     : 30 Juli 2018
+; PROJECT  : Ruang Kelas E305 Gedung E ITERA
+; AUTHOR   : RIFQI IKHWANUDDIN, S.T., M.T.
+; DATE     : 30 Juli 2018
 
+; Absorber materials are defined here
 ABS Kaca <20 10 8 6 4 2>
 ABS Lantai <1 1  2 2 2 2>
 ABS Langit <20 15 10 8 4 2> ; PLASTER10 Lawrence
@@ -9,12 +10,14 @@ ABS Pintu <15 12 10 7 6 7>
 ABS Tiang <1 1 2 2 2 2>
 ABS Tembok <42 21 10 8 6 6 >
 
+; These are global variables which must be set in the beginning source code
 GLOBAL u	= 0.65
 GLOBAL h	= 2.8
 GLOBAL a = 0.15
 GLOBAL pintu = 1.9
 GLOBAL vent = 0.5
 
+; Corners have been easily set up using global variables
 CORNERS
 ;LANTAI
 1	  0	    0	      0
@@ -33,7 +36,6 @@ CORNERS
 14  x(3)  y(13) 0
 15  x(3)  y(11) 0
 16  0       13*u    0
-
 17 x(1) y(1) a
 18 x(2) y(2) a
 19 x(3) y(3) a
@@ -50,7 +52,6 @@ CORNERS
 30 x(14) y(14) h
 31 x(15) y(15) h
 32 x(16) y(16) h
-
 33 x(2) y(2) h
 34 x(3) y(3) h
 35 x(4) y(4) h
@@ -60,6 +61,7 @@ CORNERS
 39 x(8) y(8) pintu
 40 x(1) y(1) h
 
+; Planes are connecting some corner dots into a single plane
 PLANES
 [1 Lantai / 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16/ Lantai]
 [2 Dinding bawah jendela \ 1 2 18 17 \ Tembok]
@@ -77,7 +79,6 @@ PLANES
 [14 / 15 14 30 31 / Tembok]
 [15 / 16 15 31 32 / Tembok]
 [16 / 1 16 32 40 17 / Tembok]
-
 [17 Langit-langit \ 40 33 34 35 36 37 23 26 27 28 29 30 31 32 \ Langit]
 [18 Jendela Kaca / 17 40 33 18 / Kaca]
 [19 Jendela Kaca / 22 21 36 37 / Kaca]
