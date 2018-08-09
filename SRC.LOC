@@ -1,0 +1,4 @@
+SOURCEDEFS
+
+A0  18*u 6.5*u 1.6     OMNI      1.0 6.5*u 1.5
+Lp1m_a   = Lp_white 75 ; white spectrum, 94 dB at 1kHz
